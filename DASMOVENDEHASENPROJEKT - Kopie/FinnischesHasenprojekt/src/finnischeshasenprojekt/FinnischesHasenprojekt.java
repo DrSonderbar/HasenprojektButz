@@ -1,12 +1,16 @@
 
 package finnischeshasenprojekt;
 import frameapi.*;
+import javax.swing.JButton;
 
 public class FinnischesHasenprojekt {
     
     public static String[][] feld = new String[14][14];
     public static String[][] hasen = new String[14][14];
     public static String[][] Speicher = new String[14][14];
+
+    
+    public static JButton btn = new JButton("hallo");
     
     public static void main(String[] args) {
         
@@ -22,6 +26,7 @@ public class FinnischesHasenprojekt {
             if(FrameAPI.newRound){
                 
                 moveHasen();
+                moveFüchse();
                 FrameAPI.initString(feld.length, feld);
                 FrameAPI.setPlayground();
             }
@@ -43,12 +48,12 @@ public class FinnischesHasenprojekt {
             feld[6][4]="H";
             feld[5][7]="F";
             feld[11][1]="H";
-            feld[10][3]="F";
+            feld[12][7]="F";
             feld[2][7]="H";
             feld[6][8]="H";
             feld[11][3]="H";
             feld[8][7]="H";
-            feld[3][5]="F";
+            feld[3][12]="F";
             feld[1][4]="H";
             feld[3][2]="H";
     }
@@ -72,6 +77,28 @@ public class FinnischesHasenprojekt {
             }
         }
         }
+    }
+
+        private static void moveFüchse() {
+         for (int i=0; i<feld.length; i++)
+        {
+        for (int j=0; j<feld.length; j++)
+        {
+            Speicher [i][j] = feld [i][j];
+        }
+        }
+        for (int i=0; i<feld.length; i++)
+        {   
+        for (int j=0; j<feld.length; j++)
+        {
+            if(Speicher[i][j].equals("F"))
+            {
+            feld[i][j]= ".";
+            feld[i][j-1]="F";                    
+            }
+        }
+        }
+        
     }
 }
 
