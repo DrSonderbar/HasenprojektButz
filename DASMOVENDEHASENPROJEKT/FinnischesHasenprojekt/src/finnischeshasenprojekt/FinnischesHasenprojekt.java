@@ -1,6 +1,6 @@
 package finnischeshasenprojekt;
 
-import frameapi.*;
+import java.awt.Frame;
 
 import javax.swing.JButton;
 
@@ -14,25 +14,24 @@ public class FinnischesHasenprojekt {
     private static int x;
     private static int y;
 
-
     public static void main(String[] args) {
 
         setFelder();
 
-        FrameAPI.initFrame();
-        FrameAPI.initString(feld.length, feld);
-        FrameAPI.setPlayground();
+        Frame.initFrame();
+        Frame.initString(feld.length, feld);
+        Frame.setPlayground();
 
         do {
-            if (FrameAPI.newRound) {
+            if (Frame.newRound) {
 
                 moveHasen();
                 moveFüchse();
-                FrameAPI.initString(feld.length, feld);
-                FrameAPI.setPlayground();
+                Frame.initString(feld.length, feld);
+                Frame.setPlayground();
             }
 
-        } while (!FrameAPI.allDead);
+        } while (!Frame.allDead);
 
         // TODO code application logic here
     }
@@ -98,26 +97,23 @@ public class FinnischesHasenprojekt {
     }
 
     private static void moveHasen() {
-        
-        for ( x=0; x< 14; x++) {
-            
-            for ( y=0; y<14; y++) {
-                
+
+        for (x = 0; x < 14; x++) {
+
+            for (y = 0; y < 14; y++) {
+
                 feld[x][y] = Speicher[x][y];
-                
 
             }
         }
-             if(feld[x][y] == "H") {
+        if (feld[x][y] == "H") {
                 // double zufallszahl = Math.random();
-               //  if(zufallszahl)>
-                 
-             } else {
-             }
-                Speicher [x][y] = ".";
-                Speicher [x][y] = "H";
-                
-             
+            //  if(zufallszahl)>
+
+        } else {
+        }
+        Speicher[x][y] = ".";
+        Speicher[x][y] = "H";
 
     }
 }
