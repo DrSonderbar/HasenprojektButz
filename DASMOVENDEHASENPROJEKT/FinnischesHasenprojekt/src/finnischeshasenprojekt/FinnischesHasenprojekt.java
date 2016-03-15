@@ -14,7 +14,6 @@ public class FinnischesHasenprojekt {
     private static int x;
     private static int y;
 
-
     public static void main(String[] args) {
 
         setFelder();
@@ -98,26 +97,30 @@ public class FinnischesHasenprojekt {
     }
 
     private static void moveHasen() {
-        
-        for ( x=0; x< 14; x++) {
-            
-            for ( y=0; y<14; y++) {
-                
+
+        for (x = 0; x < 14; x++) {
+
+            for (y = 0; y < 14; y++) {
+
                 feld[x][y] = Speicher[x][y];
-                
 
             }
         }
-             if(feld[x][y] == "H") {
-                // double zufallszahl = Math.random();
-               //  if(zufallszahl)>
-                 
-             } else {
-             }
-                Speicher [x][y] = ".";
-                Speicher [x][y] = "H";
-                
-             
+        for (x = 0; x < 14; x++) {
 
+            for (y = 0; y < 14; y++) {
+
+                if (feld[x][y] == "H") {
+                // double zufallszahl = Math.random();
+                    //  if(zufallszahl)>
+
+                } else {
+                }
+                Speicher[x][y] = ".";
+                Speicher[x][y] = "H";
+
+
+            }
+        }
     }
 }
