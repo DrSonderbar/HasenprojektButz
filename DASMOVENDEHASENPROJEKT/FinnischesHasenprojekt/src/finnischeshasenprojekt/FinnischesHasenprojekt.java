@@ -1,7 +1,11 @@
 package finnischeshasenprojekt;
 
+<<<<<<< HEAD
 import java.awt.Frame;
 
+=======
+import frameapi.*;
+>>>>>>> parent of dbe3299... Zufallszahlen
 import javax.swing.JButton;
 
 public class FinnischesHasenprojekt {
@@ -11,8 +15,11 @@ public class FinnischesHasenprojekt {
     public static String[][] Speicher = new String[14][14];
 
     public static JButton btn = new JButton("hallo");
+<<<<<<< HEAD
     private static int x;
     private static int y;
+=======
+>>>>>>> parent of dbe3299... Zufallszahlen
 
     public static void main(String[] args) {
 
@@ -55,12 +62,29 @@ public class FinnischesHasenprojekt {
         feld[8][7] = "H";
         feld[3][12] = "F";
         feld[1][4] = "H";
-        feld[3][5] = "J";
+        feld[3][2] = "J";
         feld[7][9] = "u";
         feld[2][2] = "R";
         feld[5][1] = "H";
-        feld[3][6] = "H";
+        feld[3][1] = "H";
+        
+    }
 
+    private static void moveHasen() {
+
+        for (int i = 0; i < feld.length; i++) {
+            for (int j = 0; j < feld.length; j++) {
+                Speicher[i][j] = feld[i][j];
+            }
+        }
+        for (int i = 0; i < feld.length; i++) {
+            for (int j = 0; j < feld.length; j++) {
+                if (Speicher[i][j].equals("H")) {
+                    feld[i][j] = ".";
+                    feld[i][j + 1] = "H";
+                }
+            }
+        }
     }
 
     private static void moveFüchse() {
@@ -84,17 +108,18 @@ public class FinnischesHasenprojekt {
                     feld[i][j - 1] = "J";
                 }
             }
-
+         
         }
-        for (int i = 0; i < feld.length; i++) {
+          for (int i = 0; i < feld.length; i++) {
             for (int j = 0; j < feld.length; j++) {
                 if (Speicher[i][j].equals("u")) {
                     feld[i][j] = ".";
-                    feld[i][j - 1] = "u";
+                    feld[i][j -1 ] = "u";
                 }
             }
         }
     }
+<<<<<<< HEAD
 
     private static void moveHasen() {
 
@@ -115,5 +140,13 @@ public class FinnischesHasenprojekt {
         Speicher[x][y] = ".";
         Speicher[x][y] = "H";
 
+=======
+    
+    private static void Steuerung()
+    {
+        
+        
+        
+>>>>>>> parent of dbe3299... Zufallszahlen
     }
 }
