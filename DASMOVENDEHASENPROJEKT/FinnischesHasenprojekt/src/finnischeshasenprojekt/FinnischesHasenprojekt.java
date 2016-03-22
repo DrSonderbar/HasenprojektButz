@@ -25,7 +25,7 @@ public class FinnischesHasenprojekt {
         do {
             if (FrameAPI.newRound) {
 
-                moveHasen();
+                
                 moveFüchse();
                 FrameAPI.initString(feld.length, feld);
                 FrameAPI.setPlayground();
@@ -48,7 +48,7 @@ public class FinnischesHasenprojekt {
         feld[6][4] = "H";
         feld[5][7] = "F";
         feld[11][1] = "H";
-        feld[12][7] = "F";
+        feld[12][8] = "F";
         feld[2][7] = "H";
         feld[6][8] = "H";
         feld[11][3] = "H";
@@ -71,55 +71,86 @@ public class FinnischesHasenprojekt {
         }
         for (int i = 0; i < feld.length; i++) {
             for (int j = 0; j < feld.length; j++) {
-                if (Speicher[i][j].equals("F")) {
+                if (Speicher[i][j].equals("H")) {
+                    if (Speicher[j].equals(13)) { 
                     feld[i][j] = ".";
-                    feld[i][j - 1] = "F";
+                    feld[i][j - 1] = "H";    
+                    }else{
+                    int Index = j+1;
+                    if(Index>13)
+                    {
+                        Index = 0;
+                    }
+                    feld[i][j] = ".";
+                    feld[i][Index] = "H";
+                     
+                    
+                       
+               
+              
+                 
+                }
+                }
+                    
+                            
+            }
+            
+        }
+        for (int i = 0; i < feld.length; i++) {
+            for (int j = 0; j < feld.length; j++) {
+                if (Speicher[i][j].equals("u")) {
+                    if (Speicher[j].equals(13)) { 
+                    feld[i][j] = ".";
+                    feld[i][j + 1] = "u";    
+                    }else{
+                    int Index = j-1;
+                    if(Index>13)
+                    {
+                        Index = 0;
+                    }
+                    feld[i][j] = ".";
+                    feld[i][Index] = "u";
+                }
+                }
+            }
+
+        }
+        for (int i = 0; i < feld.length; i++) {
+            for (int j = 0; j < feld.length; j++) {
+                if (Speicher[i][j].equals("F")) {
+                     if (Speicher[j].equals(13)) { 
+                    feld[i][j] = ".";
+                    feld[i - 1][j + 1] = "F";    
+                    }else{
+                    int Index = i+1;
+                    if(Index>13)
+                    {
+                        Index = 0;
+                    }
+                    feld[i][j] = ".";
+                    feld[Index][j] = "F";
+                }
                 }
             }
         }
         for (int i = 0; i < feld.length; i++) {
             for (int j = 0; j < feld.length; j++) {
                 if (Speicher[i][j].equals("J")) {
+                    if (Speicher[j].equals(13)) { 
                     feld[i][j] = ".";
-                    feld[i][j - 1] = "J";
-                }
-            }
-
-        }
-        for (int i = 0; i < feld.length; i++) {
-            for (int j = 0; j < feld.length; j++) {
-                if (Speicher[i][j].equals("u")) {
+                    feld[i - 1][j] = "J";    
+                    }else{
+                    int Index = i+1;
+                    if(Index>13)
+                    {
+                        Index = 0;
+                    }
                     feld[i][j] = ".";
-                    feld[i][j - 1] = "u";
+                    feld[Index][j] = "J";
                 }
-            }
-        }
-    }
-
-    private static void moveHasen() {
-
-        for (x = 0; x < 14; x++) {
-
-            for (y = 0; y < 14; y++) {
-
-                feld[x][y] = Speicher[x][y];
-
-            }
-        }
-        for (x = 0; x < 14; x++) {
-
-            for (y = 0; y < 14; y++) {
-
-                if (feld[x][y] == "H") {
-                // double zufallszahl = Math.random();
-                    //  if(zufallszahl)>
-
-                } else {
                 }
-                Speicher[x][y] = ".";
-                Speicher[x][y] = "H";
 
-
+               
             }
         }
     }
